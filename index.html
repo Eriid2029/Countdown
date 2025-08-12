@@ -21,13 +21,12 @@
   </style>
 </head>
 <body>
-  <h1>Our First Promise</h1>
+  <h1>Six Months of Growth</h1>
   <div id="countdown"></div>
 
   <script>
     function updateCountdown() {
-      // December is standard time (CST = UTC-6)
-      const targetDate = new Date(Date.UTC(2025, 11, 15, 6, 0, 0)).getTime(); 
+      const targetDate = new Date('December 15, 2025 00:00:00').getTime();
       const now = new Date().getTime();
       const timeLeft = targetDate - now;
 
