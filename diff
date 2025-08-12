@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Six Months of Growth Countdown</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fce4ec;
+      text-align: center;
+      padding-top: 50px;
+      color: #880e4f;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    #countdown {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Six Months of Growth</h1>
+  <div id="countdown"></div>
+
+  <script>
+    function updateCountdown() {
+      const targetDate = new Date('December 15, 2025 00:00:00').getTime();
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.getElementById('countdown').innerHTML =
+        days + ' days : ' +
+        hours + ' hours : ' +
+        minutes + ' minutes : ' +
+        seconds + ' seconds';
+
+      setTimeout(updateCountdown, 1000);
+    }
+    window.onload = updateCountdown;
+  </script>
+</body>
+</html>
